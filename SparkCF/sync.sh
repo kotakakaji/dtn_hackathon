@@ -1,0 +1,1 @@
+rsync -aurv -e 'ssh -p 8443' dist/SparkCF.jar ubuntu@118.102.6.62:/home/ubuntu/

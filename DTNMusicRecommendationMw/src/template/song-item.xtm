@@ -1,0 +1,16 @@
+{{#SONG}}
+<!-- BEGIN .item -->
+<div class="item">	
+	<div class="item-content">
+		<h3 style="float: left;"><a title="{{SONG_ID}}" class="z-title">{{TITLE}}</a></h3>
+		<br style="clear: both;">
+		<span class="video-meta">
+			<a href="javascript:void()"><i class="fa fa-music"></i>{{SINGER}}</a>
+			<a href="javascript:void()" style="float: right;"><i class="fa fa-th-list"></i>{{ALBUM}}</a> <br/><br/> 
+			<a href="javascript:void()"><i class="fa fa-pencil-square-o"></i>{{COMPOSER}}</a>
+			<a href="javascript:void()" style="float: right;"><i class="fa fa-tag"></i>{{GENRE}}</a>
+		</span>	
+	</div>
+</div>
+<!-- END .item -->
+{{/SONG}}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<!-- BEGIN head -->
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Title -->
+		<title>
+			{{TITLE}}
+		</title>
+
+		<!-- Meta Tags -->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta property="og:site_name" content="Zalo">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="/stc/images/favicon.ico" type="image/x-icon">
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="stc/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="stc/css/font-awesome.min.css" />
+		<link type="text/css" rel="stylesheet" href="stc/css/index.css">
+		
+
+		<style type="text/css">
+			.live {
+				border:1px;
+				border-style:solid;
+				border-color:#e62117;color: #e62117; 
+				text-transform: uppercase;
+				padding-left: 5px; 
+				padding-right: 5px;
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				font-weight: normal;
+			}
+			
+			.video-list.grid .item {
+				width: 100%;
+			}
+			
+			.buff-container {
+				position: relative;
+				display: block;
+				width: 100%;
+				margin: 0 auto;
+				margin-top: -10px;
+				height: 20px;
+				background: #eee;
+			}
+
+			.buff-item {
+				position: absolute;
+				cursor: pointer;
+				height: 100%;
+				background: grey;
+			}
+			
+			.fa-spin {
+				-webkit-animation: spin 20s infinite linear;
+				-moz-animation: spin 20s infinite linear;
+				-o-animation: spin 20s infinite linear;
+				animation: spin 20s infinite linear;
+			}
+			
+			.bigwrapper {
+				width: 1280px;
+				margin: 0 auto;
+				padding-top: 8px;
+			}
+			.wrapper {
+				width: 860px;
+			}
+			@media only screen and (max-width: 1280px) {
+				.bigwrapper {
+					max-width: 100%;
+				}
+				.wrapper {
+					width: 94%;
+				}
+			}
+			
+			.boxed.active {
+				float: left;
+				width: 900px;
+			}			
+			
+			.relatevideo {
+				width: 313.5px;
+				margin: 0 auto;
+				margin-left: 15px;
+				padding: 0px;
+				min-height: 100%;
+				overflow: hidden;
+				float: left;
+				margin-top: 20px;
+			}
+		</style>
+
+		<script src="stc/js/jquery-1.9.1.min.js"></script>
+		<script src="stc/js/bootstrap.min.js"></script>
+		
+	</head>
+
+	<!-- BEGIN body -->
+
+	<body>
+		
+		<div class="bigwrapper">
+		<!-- BEGIN .boxed -->
+		<div class="boxed active">
+
+			<!-- BEGIN .content -->
+			<section class="content">
+				<!-- BEGIN .wrapper -->
+				<div class="wrapper">					
+					<!-- BEGIN .with-sidebar-layout -->
+					<div class="stream-info">
+						<!-- BEGIN .content-panel -->
+						<div class="content-panel">
+							<div class="panel-title" style="background-color: #373737;">
+								<h2 id="user-title">Songs were listen by user {{USER_ID}}</h2>
+							</div>
+							<div class="panel-block video-list grid">
+								<div class="video-container" id="list-listen">
+									{{LIST_LISTENED}}									
+								</div>
+							</div>
+							<!-- END .content-panel -->
+						</div>
+					</div>
+
+					<!-- END .wrapper -->
+				</div>
+
+				<!-- BEGIN .content -->
+			</section>
+
+			<!-- END .boxed -->
+		</div>
+		
+		<div class="boxed relatevideo" id="relate-container-1">
+				<div class="content-panel">
+					<div class="panel-title">
+						<h2>Recommended songs</h2>
+					</div>
+					<div class="panel-block video-list grid">
+						<div class="video-container" id="list-recommend">
+							{{LIST_RECOMMEND}}
+						</div>
+					</div>
+				</div>
+		</div>
+		</div>
+		<script type="text/javascript">
+			$('body').ready(function () {
+				if ($('#listen').html().trim() == '') {
+				$(".video-container").addClass('panel-content');
+				$(".video-container").parent().removeClass('video-list grid');
+				$(".video-container").html('<p>&lt; empty &gt;</p>');
+				$(".video-container").removeClass('video-container');
+				$('#user-title').html('User id not found');
+			}
+			});
+			
+			
+
+		</script>
+
+		<!-- END body -->
+
+		<!-- END html -->
+
+	</body>
+
+</html>
